@@ -1,0 +1,12 @@
+[data-user-theme] { --u-bg:#f0f8ff; --u-card:#fff; --u-soft:#edf4fa; --u-text:#1a1a2e; --u-muted:#5b6b7d; --u-line:#d7e2ec; background:var(--u-bg); color:var(--u-text); }
+[data-user-theme="dark"] { color-scheme:dark; --u-bg:#0c1725; --u-card:#152337; --u-soft:#20324b; --u-text:#e7eef7; --u-muted:#b1c0d2; --u-line:#34475e; }
+[data-user-theme] .u-card {background:var(--u-card);border-color:var(--u-line);}
+[data-user-theme] .u-soft {background:var(--u-soft);}
+[data-user-theme] .u-muted {color:var(--u-muted);}
+[data-user-theme] .u-input {background:var(--u-card);color:var(--u-text);border-color:var(--u-line);}
+[data-user-theme] .u-input:focus {outline:2px solid #4a90d9;outline-offset:1px;}
+[data-user-theme] .u-primary {background:#0a4674;color:white;}
+[data-user-theme] .u-secondary {background:var(--u-card);border-color:var(--u-line);color:var(--u-text);}
+[data-user-theme] .u-error {background:#fff1f2;color:#991b1b;}
+[data-user-theme] .u-success {background:#eaf7ee;color:#166534;}
+[data-user-theme] button:disabled {cursor:not-allowed;}

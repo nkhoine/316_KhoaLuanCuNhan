@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Set màu nền và màu chữ mặc định cho toàn bộ body dựa trên file config */
+body {
+  background-color: theme('colors.bg');
+  color: theme('colors.text');
+}
