@@ -14,6 +14,7 @@ export default function AuthPage() {
   
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
   const [name, setName] = useState('');
 
   // Lấy parameter từ URL (nếu có ?mode=register thì mở form đăng ký)
@@ -25,7 +26,12 @@ export default function AuthPage() {
   }, [location]);
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault(); setBusy(true); setError('');
+    e.preventDefault(); setError('');
+    if (!isLogin && password !== confirmPassword) {
+      setError('Mật khẩu xác nhận không khớp. Vui lòng kiểm tra lại.');
+      return;
+    }
+    setBusy(true);
     let registered = false;
     try {
       if (!isLogin) { await api('/auth/register', 'POST', { email: email.trim(), password, fullName: name.trim() }); registered = true; }
@@ -83,10 +89,18 @@ export default function AuthPage() {
               <div>
                 <div className="flex justify-between items-center mb-1.5">
                   <label className="block text-xs font-bold text-muted uppercase tracking-wide">Mật khẩu</label>
-                  
                 </div>
                 <input required type="password" value={password} onChange={(e) => setPassword(e.target.value)} className="w-full px-4 py-3 rounded-xl border border-line focus:border-secondary focus:ring-2 focus:ring-secondary/20 outline-none transition-all" placeholder="••••••••" />
               </div>
+
+              {!isLogin && (
+                <div>
+                  <div className="flex justify-between items-center mb-1.5">
+                    <label className="block text-xs font-bold text-muted uppercase tracking-wide">Xác nhận mật khẩu</label>
+                  </div>
+                  <input required type="password" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} className="w-full px-4 py-3 rounded-xl border border-line focus:border-secondary focus:ring-2 focus:ring-secondary/20 outline-none transition-all" placeholder="••••••••" />
+                </div>
+              )}
 
               <button disabled={busy} type="submit" className="mt-4 w-full bg-navy text-white py-3.5 rounded-xl font-bold text-base flex items-center justify-center gap-2 hover:bg-navy/90 hover:shadow-lg transition-all">
                 {busy ? 'Đang xử lý…' : isLogin ? <><CheckCircle2 size={20} /> Đăng nhập ngay</> : <>Đăng ký miễn phí <ArrowRight size={20} /></>}

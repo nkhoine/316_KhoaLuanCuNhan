@@ -17,8 +17,8 @@ export default function LandingPage() {
       <header className="sticky top-0 z-50 bg-surface/90 backdrop-blur-md border-b border-line shadow-sm">
         <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
           <div className="flex items-center gap-3 font-black text-xl text-navy">
-            <span className="text-accent text-2xl">💧</span> 
-            <span>FoodLens<span className="block text-[10px] font-normal text-muted">Thủy x Anime · Dinh dưỡng AI</span></span>
+            <span className="text-accent text-2xl">💧</span>
+            <span>FoodLens<span className="block text-[10px] font-normal text-muted"></span></span>
           </div>
           <div className="flex gap-4">
             <Link to="/auth" className="px-5 py-2.5 text-sm font-bold text-navy hover:bg-bg-alt rounded-xl transition-colors">Đăng nhập</Link>
@@ -51,12 +51,12 @@ export default function LandingPage() {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {[
-            { icon: <Camera size={24}/>, title: 'Nhận diện đa dạng', desc: 'Phân loại chuẩn xác các món ăn đặc trưng Việt Nam từ ảnh chụp.' },
-            { icon: <BarChart3 size={24}/>, title: 'Bóc tách Macro', desc: 'Tính toán chính xác Protein, Carbs, Fat theo số gram thực tế tiêu thụ.' },
-            { icon: <Book size={24}/>, title: 'Nhật ký 4 bữa', desc: 'Theo dõi Bữa sáng, Trưa, Tối, Phụ không lo trùng lặp dữ liệu.' },
-            { icon: <Target size={24}/>, title: 'Mục tiêu cá nhân', desc: 'Thiết lập lộ trình Giảm cân, Tăng cơ hay Duy trì cân nặng trực quan.' },
-            { icon: <Shield size={24}/>, title: 'Quản trị mô hình', desc: 'Dành riêng cho Admin: Theo dõi dataset, chỉ số mAP, ánh xạ nhãn AI.' },
-            { icon: <Zap size={24}/>, title: 'Đồng bộ Web & App', desc: 'Sử dụng mượt mà trên trình duyệt máy tính và trải nghiệm chuẩn Mobile.' },
+            { icon: <Camera size={24} />, title: 'Nhận diện đa dạng', desc: 'Phân loại chuẩn xác các món ăn đặc trưng Việt Nam từ ảnh chụp.' },
+            { icon: <BarChart3 size={24} />, title: 'Bóc tách Macro', desc: 'Tính toán chính xác Protein, Carbs, Fat theo số gram thực tế tiêu thụ.' },
+            { icon: <Book size={24} />, title: 'Nhật ký 4 bữa', desc: 'Theo dõi Bữa sáng, Trưa, Tối, Phụ không lo trùng lặp dữ liệu.' },
+            { icon: <Target size={24} />, title: 'Mục tiêu cá nhân', desc: 'Thiết lập lộ trình Giảm cân, Tăng cơ hay Duy trì cân nặng trực quan.' },
+            { icon: <Shield size={24} />, title: 'Quản trị mô hình', desc: 'Dành riêng cho Admin: Theo dõi dataset, chỉ số mAP, ánh xạ nhãn AI.' },
+            { icon: <Zap size={24} />, title: 'Đồng bộ Web & App', desc: 'Sử dụng mượt mà trên trình duyệt máy tính và trải nghiệm chuẩn Mobile.' },
           ].map((f, i) => (
             <div key={i} className="bg-surface p-6 rounded-3xl border border-line shadow-sm hover:-translate-y-1 transition-transform">
               <div className="w-12 h-12 bg-chip text-secondary rounded-xl flex items-center justify-center mb-4">{f.icon}</div>

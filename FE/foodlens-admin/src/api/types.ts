@@ -7,3 +7,34 @@ export type DailySummary = {
  meals: { mealLogId: number; mealType: string; mealCalories: number; items: { id: number; foodId: number; foodName: string; consumedWeightG: number; actualCalories: number; actualProtein: number; actualCarbs: number; actualFat: number; actualFiber: number | null }[] }[];
 };
 export type Recognition = { food_detected: boolean; ai_prediction?: string; confidence?: number; predictions: {label: string; confidence: number}[]; nutrition_info: Food | null; candidates?: Food[]; message?: string };
+
+export type AdminReport = {
+ from: string;
+ to: string;
+ summary: {
+  newUsers: number;
+  activeUsers: number;
+  mealEntries: number;
+  aiAssistedEntries: number;
+  averageAiConfidence: number | null;
+ };
+ dailyActivity: {
+  date: string;
+  activeUsers: number;
+  mealEntries: number;
+ }[];
+ popularFoods: {
+  foodId: number;
+  foodName: string;
+  entryCount: number;
+  totalWeightG: number;
+  aiAssistedCount: number;
+ }[];
+ averageNutrition: {
+  calories: number | null;
+  protein: number | null;
+  carbs: number | null;
+  fat: number | null;
+  fiber: number | null;
+ };
+};

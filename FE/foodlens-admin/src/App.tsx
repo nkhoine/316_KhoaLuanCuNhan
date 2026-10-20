@@ -8,6 +8,7 @@ import FoodsPage from './pages/admin/FoodsPage';
 import ModelTestPage from './pages/admin/ModelTestPage';
 import AdminDashboard from './pages/admin/AdminDashboard';
 import UsersPage from './pages/admin/UsersPage';
+import ReportsPage from './pages/admin/ReportsPage';
 
 import UserLayout from './components/UserLayout';
 import UserRecognizePage from './pages/user/UserRecognizePage';
@@ -20,6 +21,8 @@ import UserOnboardingPage from './pages/user/UserOnboardingPage';
 // Import 2 trang mới
 import LandingPage from './pages/LandingPage';
 import AuthPage from './pages/AuthPage';
+
+import ActivityPage from './pages/admin/ActivityPage';
 
 function App() {
   return (
@@ -46,17 +49,19 @@ function App() {
           <Route index element={<Navigate to="dashboard" replace />} />
           <Route path="dashboard" element={<AdminDashboard />} />
           <Route path="users" element={<UsersPage />} />
-          {['datasets', 'models', 'reports', 'activity'].map(path => (
+          {['datasets', 'models'].map(path => (
             <Route key={path} path={path} element={
               <section className="rounded-2xl border border-line bg-white p-8">
                 <h2 className="text-xl font-semibold text-navy">Chức năng đang phát triển</h2>
-                <p className="mt-3 text-sm text-muted">Module này chưa được kết nối dữ liệu. Bạn có thể sử dụng Tổng quan, Người dùng, Món ăn & dinh dưỡng hoặc Kiểm thử mô hình.</p>
+                <p className="mt-3 text-sm text-muted">Module này chưa được kết nối dữ liệu. Bạn có thể sử dụng Tổng quan, Người dùng, Món ăn & dinh dưỡng, Kiểm thử mô hình, Báo cáo hoặc Hoạt động.</p>
               </section>
             } />
           ))}
           <Route path="mappings" element={<MappingsPage />} />
           <Route path="foods" element={<FoodsPage />} />
           <Route path="model-test" element={<ModelTestPage />} />
+          <Route path="reports" element={<ReportsPage />} />
+          <Route path="activity" element={<ActivityPage />} />
           <Route path="*" element={<Navigate to="/admin/dashboard" replace />} />
         </Route>
       </Route></Routes></AuthProvider>
